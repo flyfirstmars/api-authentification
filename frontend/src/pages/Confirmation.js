@@ -11,7 +11,7 @@ function Confirmation({message}) {
                     <div className="mt-6">
                         <div className="mt-2 flex items-center justify-center text-3xl">
                             <FaCheckCircle className="text-green-500 mr-2"/>
-                            {message} Successfully signed up!
+                            {message} Successfully!
                         </div>
                     </div>
                 </div>
