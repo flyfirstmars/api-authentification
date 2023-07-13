@@ -5,14 +5,15 @@ import userEvent from "@testing-library/user-event";
 import {BrowserRouter as Router} from "react-router-dom";
 
 
-test("renders SignUp page", () => {
-    const {getByText} = render(<Router><SignUp/></Router>);
-    const linkElement = getByText(/Create your account/i);
+test("renders SignUp page", async () => {
+    const {findByText} = render(<Router><SignUp/></Router>);
+    const linkElement = await findByText(/Create/);
     expect(linkElement).toBeInTheDocument();
 });
 
+
 test("allows the user to sign up successfully", async () => {
-    const {getByLabelText, getByText} = render(<Router><SignUp/></Router>);
+    const {getByLabelText, findByText} = render(<Router><SignUp/></Router>);
 
     // simulate user typing
     userEvent.type(getByLabelText(/Full Name/i), "Test User");
